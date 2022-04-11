@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using PaymentGateway.Application.DTO;
 using PaymentGateway.Integration.Tests.Fixtures;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -109,24 +110,27 @@ namespace PaymentGateway.Integration.Tests
                .WithWebHostBuilder(builder =>
                {
                });
-            var dataFirst = dataGenerator.GeneratePaymentDataByCounter().First();
-            var dataLast = dataGenerator.GeneratePaymentDataByCounter().Last();
+            var data = dataGenerator.GeneratePaymentDataByCounter(2);
+            var dataLast = data.First();
+            var dataFirst = data.Last();
             var client = application.CreateClient();
             HttpContent contentFirst = new StringContent(JsonConvert.SerializeObject(dataFirst), Encoding.UTF8, "application/json");
-            HttpContent contentLast = new StringContent(JsonConvert.SerializeObject(dataFirst), Encoding.UTF8, "application/json");
-            var paymentResult = await (await client.PostAsync(this.baseDirectoryPayment + "?saveCardInfo=true", contentFirst)).Content.ReadAsStringAsync();
-            var arrangeResult = JsonConvert.DeserializeObject<PaymentDto>(paymentResult);
-
+            HttpContent contentLast = new StringContent(JsonConvert.SerializeObject(dataLast), Encoding.UTF8, "application/json");
+            var paymentResultFirst = await (await client.PostAsync(this.baseDirectoryPayment + "?saveCardInfo=true", contentFirst)).Content.ReadAsStringAsync();
+            var arrangeResultFirst = JsonConvert.DeserializeObject<PaymentDto>(paymentResultFirst);
+            var paymentResultLast = await (await client.PostAsync(this.baseDirectoryPayment + "?saveCardInfo=true", contentLast)).Content.ReadAsStringAsync();
+            var arrangeResultLast = JsonConvert.DeserializeObject<PaymentDto>(paymentResultLast);
             //act
 
-            var response = await ((await client.GetAsync(BASECARDINFOPATH + $"?UserId={arrangeResult.CardInfo.UserId}")).Content.ReadAsStringAsync());
+            var responseFirst = await ((await client.GetAsync(BASECARDINFOPATH + $"{arrangeResultFirst.CardInfo.UserId}")).Content.ReadAsStringAsync());
+            var responseLast = await ((await client.GetAsync(BASECARDINFOPATH + $"{arrangeResultLast.CardInfo.UserId}")).Content.ReadAsStringAsync());
 
-            var result = JsonConvert.DeserializeObject<CardInfoDto>(response);
+            var resultFirst = JsonConvert.DeserializeObject<IEnumerable<CardInfoDto>>(responseFirst);
+            var resultLast = JsonConvert.DeserializeObject<IEnumerable<CardInfoDto>>(responseLast);
 
             //assert
-
-
-            Assert.True(result.CardHolderName== dataFirst.CardInfo.CardHolderName);
+            Assert.True(resultFirst.First().CardHolderName == dataFirst.CardInfo.CardHolderName);
+            Assert.True(resultLast.Last().CardHolderName == dataLast.CardInfo.CardHolderName);
         }
     }
 }

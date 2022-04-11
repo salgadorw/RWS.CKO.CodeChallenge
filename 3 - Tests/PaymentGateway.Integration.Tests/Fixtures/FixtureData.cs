@@ -38,7 +38,7 @@ namespace PaymentGateway.Integration.Tests.Fixtures
                                       "-" + GetNextIntValue().ToString() + GetNextIntValue().ToString() + GetNextIntValue().ToString() + GetNextIntValue().ToString() +
                                       "-" + GetNextIntValue().ToString() + GetNextIntValue().ToString() + GetNextIntValue().ToString() + GetNextIntValue().ToString() +
                                       "-" + GetNextIntValue().ToString() + GetNextIntValue().ToString() + GetNextIntValue().ToString() + GetNextIntValue().ToString(),
-                    CardHolderName = GetRandomName(int.Parse(GetNextIntValue().ToString())),
+                    CardHolderName = "RWS "+GetRandomName(int.Parse(GetNextIntValue(true).ToString())),
                     ExpirationDate = DateTime.Now.AddYears(3).ToString("MM/yyyy"),
                     CVV = int.Parse(GetNextIntValue(true).ToString() + GetNextIntValue().ToString() + GetNextIntValue().ToString()),
                     Id = null,
@@ -56,7 +56,7 @@ namespace PaymentGateway.Integration.Tests.Fixtures
 
         public String GetRandomName(int lenght)
         {
-            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ";
             var stringChars = new char[lenght];
             var random = new Random();
 
@@ -76,7 +76,7 @@ namespace PaymentGateway.Integration.Tests.Fixtures
             if(isFirst)
                 return random.Next(1, 9).ToString().First();
             else
-            return random.Next(0, 9).ToString().First();
+                return random.Next(0, 9).ToString().First();
 
         }
     }
