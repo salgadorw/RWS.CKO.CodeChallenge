@@ -32,7 +32,11 @@ https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-
 
 The solution layers structure motivation:
 
-    Implementing a microservice using DDD architecture pattern leads you for implementing the business roles and its validation inside a domain model entity which is totally independ of the infrastructure and user interaction actions (Application Layer that suports the Presenter Layer that interacts with the user), allowing the microservice domain business rules be implemented without external interferences like users input validation or user friendly results, data persistence, and adptation of data for interaction with a third part application;
+    Implementing a microservice using DDD architecture pattern leads you for implementing the business roles 
+    and its validation inside a domain model entity which is totally independ of the infrastructure and user interaction actions
+    (Application Layer that suports the Presenter Layer that interacts with the user), allowing the microservice domain business rules be implemented without
+    external interferences like users input validation or user friendly results, data persistence, 
+    and adptation of data for interaction with a third part application;
 
 
 Business Requirements Implemented:
@@ -41,7 +45,8 @@ Business Requirements Implemented:
 
     Card info data persistency, retrievement and validation
 
-    Acquiring bank Implementation as a Infrastructure dependency so it has pseudo-implementation which contains the payments persistency and the payment status changes function
+    Acquiring bank Implementation as a Infrastructure dependency so it has pseudo-implementation which contains the payments 
+    persistency and the payment status changes function
 
 
 Improvements suggested:
