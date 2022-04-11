@@ -12,7 +12,7 @@ Solution run requirements:
 
 Solution run:
 
-    Set the startup project PaymentGateway.Presentation.API and start the project clicking on green arrow:
+    Set the startup project the PaymentGateway.Presentation.API and start the project clicking on green arrow:
 
    ![image](https://user-images.githubusercontent.com/4457435/162650623-84fbdc0e-9e6f-4f3c-bb96-6ffb3cc2901a.png)
 
