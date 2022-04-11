@@ -4,18 +4,18 @@ Solution run requirements:
 
     To run application you will need the Visual Studio 2022 Communit and the .net framework 6.+.(Install the community version with web development tools):
     Link:
-    ****https://visualstudio.microsoft.com/free-developer-offers/****
+****https://visualstudio.microsoft.com/free-developer-offers/****
 
 Solution run:
 
     Set the startup project PaymentGateway.Presentation.API and start the project clicking on green arrow:
 
-    ![image](https://user-images.githubusercontent.com/4457435/162650623-84fbdc0e-9e6f-4f3c-bb96-6ffb3cc2901a.png)
+![image](https://user-images.githubusercontent.com/4457435/162650623-84fbdc0e-9e6f-4f3c-bb96-6ffb3cc2901a.png)
 
     Or
     You can run using PaymentGateway.Integration.Tests using the test explorer:
 
-    ![image](https://user-images.githubusercontent.com/4457435/162654568-21026474-2396-4035-b1c9-2efd3347d0a8.png)
+![image](https://user-images.githubusercontent.com/4457435/162654568-21026474-2396-4035-b1c9-2efd3347d0a8.png)
 
 
 Solution description:
@@ -24,11 +24,11 @@ Solution description:
 
     That is Explained on the first 15min of this tutorial:
 
-    https://www.youtube.com/watch?v=lkmvnjypENw
+https://www.youtube.com/watch?v=lkmvnjypENw
 
     And on this tutorial:
 
-    https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
+https://docs.microsoft.com/en-us/dotnet/architecture/microservices/microservice-ddd-cqrs-patterns/ddd-oriented-microservice
 
 The solution layers structure motivation:
 
