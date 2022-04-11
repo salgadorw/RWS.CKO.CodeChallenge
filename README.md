@@ -4,9 +4,9 @@ Solution run requirements:
 
     To run application you will need the Visual Studio 2022 Communit and the .net framework 6.+.
     Install the community version with web development tools:
+   https://devblogs.microsoft.com/dotnet/announcing-net-6/
+   
    ![image](https://user-images.githubusercontent.com/4457435/162660958-7efd1ed3-a040-471d-af24-7bbafadc752a.png)
-
-    Link:
     
    ****https://visualstudio.microsoft.com/free-developer-offers/****
 
