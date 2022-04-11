@@ -17,7 +17,7 @@ Solution run:
    ![image](https://user-images.githubusercontent.com/4457435/162650623-84fbdc0e-9e6f-4f3c-bb96-6ffb3cc2901a.png)
 
     Or
-    You can run using PaymentGateway.Integration.Tests using the test explorer:
+    You can run using PaymentGateway.Integration.Tests (right button click) using the test explorer:
 
    ![image](https://user-images.githubusercontent.com/4457435/162654568-21026474-2396-4035-b1c9-2efd3347d0a8.png)
 
