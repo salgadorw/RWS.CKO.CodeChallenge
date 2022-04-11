@@ -17,8 +17,8 @@ Solution run:
 
    ![image](https://user-images.githubusercontent.com/4457435/162650623-84fbdc0e-9e6f-4f3c-bb96-6ffb3cc2901a.png)
     
-    and interacts with its merchant for implementation using the open api pages provided by Swagger:
-   
+    and be able to interacts with its merchant consumer implementation using the open api pages provided by Swagger:
+    
    ![image](https://user-images.githubusercontent.com/4457435/162662869-4e9d3470-8969-48ad-a5ee-3bfd37da2e2b.png)
     
    Or
