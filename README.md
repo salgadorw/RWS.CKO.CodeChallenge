@@ -4,6 +4,7 @@ Solution run requirements:
 
     To run application you will need the Visual Studio 2022 Communit and the .net framework 6.+.(Install the community version with web development tools):
     Link:
+    
 ****https://visualstudio.microsoft.com/free-developer-offers/****
 
 Solution run:
@@ -34,8 +35,8 @@ The solution layers structure motivation:
 
     Implementing a microservice using DDD architecture pattern leads you for implementing the business roles 
     and its validation inside a domain model entity which is totally independ of the infrastructure and user interaction actions
-    (Application Layer that suports the Presenter Layer that interacts with the user), allowing the microservice domain business rules be implemented without
-    external interferences like users input validation or user friendly results, data persistence, 
+    (Application Layer that suports the Presenter Layer that interacts with the user), allowing the microservice domain business 
+    rules be implemented without external interferences like users input validation or user friendly results, data persistence, 
     and adptation of data for interaction with a third part application;
 
 
@@ -51,15 +52,17 @@ Business Requirements Implemented:
 
 Improvements suggested:
 
-    Implementation of the the unit tests for Appplication.Services and Domain.Entity
+    Implementation of the the unit tests for Payment.Gateway Appplication.Services and Domain.Entities
 
-    Implementation of integrations tests adding the validations for the payments on the acquiring bank regarding status changes data 
+    Implementation of integrations tests adding the validations for the payments on the acquiring 
+    bank regarding status changes data 
 
-    Implementation of validations for payment gateway InsertCardInfo and ProcessPayment regarding valid data
+    Implementation of validations for payment gateway on CardInfo and Payment application services 
+    regarding the user input data
 
-    Implementation of the preferred user credit card property and its business logic
+    Implementation of the preferred user credit card property and its business rules
 
-    Improvement of the acquiring bank implementation
+    Improvement of the implementation of the infrastructure acquiring bank
 
 
 
